@@ -1,0 +1,31 @@
+spring:
+
+  application:
+    name: football-predictor-api
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/football_predictor
+    username: football_user
+    password: football_password
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+    open-in-view: false
+
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
+
+sportmonks:
+  base-url: https://api.sportmonks.com/v3/football
+  api-token: ${SPORTMONKS_API_TOKEN}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
